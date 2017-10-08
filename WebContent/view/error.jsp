@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	This is an error page
+	비밀번호가 틀리거나 없는 아이디 입니다.
 	<p> <a href="/helloMVC/index.jsp"> try again</a></p>
 </body>
 </html>

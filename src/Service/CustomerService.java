@@ -14,11 +14,11 @@ public class CustomerService {
 	public CustomerService() {
 		customerMap = new HashMap<String, Customer>();
 		
-		addCustomer(new Customer("id001","alice","alice.hansung.ac.kr"));
-		addCustomer(new Customer("id002","bob","bob.hansung.ac.kr"));
-		addCustomer(new Customer("id003","charlie","charlie.hansung.ac.kr"));
-		addCustomer(new Customer("id004","david","david.hansung.ac.kr"));
-		addCustomer(new Customer("id005","trudy","trudy.hansung.ac.kr"));
+		addCustomer(new Customer("id001","001","alice"));
+		addCustomer(new Customer("id002","002","bob"));
+		addCustomer(new Customer("id003","003","charlie"));
+		addCustomer(new Customer("id004","004","david"));
+		addCustomer(new Customer("id005","005","trudy"));
 		
 	}
 
@@ -33,11 +33,5 @@ public class CustomerService {
 			return (customerMap.get(id.toLowerCase()));
 		else
 			return null;
-	}
-
-	public List<Customer> getAllCustomers() {
-		List<Customer> customerList = new ArrayList<Customer>(customerMap.values());
-		return customerList;		
-	}
-	
+	}	
 }

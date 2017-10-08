@@ -32,22 +32,22 @@ public class DoLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String customerId = request.getParameter("customerId");
-		
+		String customerId = request.getParameter("customerId");	
+		String UserInputPassword = request.getParameter("password");
 		// perform business logic. Return a been as a result.
 		// ...
 		CustomerService service = new CustomerService();
 		Customer customer = service.findCustomer(customerId);
-		request.setAttribute("customer", customer);
-		
-		List<Customer> customerList = service.getAllCustomers();
-		request.setAttribute("customers", customerList);		
+		request.setAttribute("customer", customer);	
+		request.setAttribute("password", UserInputPassword);	
 		
 		String page;
-		if(customer == null)
-			page ="/view/error.jsp";
+		
+		if(customer != null && (customer.getPassword()).equals(UserInputPassword))
+			page ="/view/form.jsp";
 		else
-			page ="/view/success.jsp";
+			page ="/view/error.jsp";
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 		dispatcher.forward(request, response);
